@@ -1,7 +1,7 @@
 FROM alpine:3.14
 
 #RUN apk add --no-cache wine xvfb-run bash which curl outils-sha1 p7zip jq nano
-RUN apk add --no-cache wine xvfb-run bash which curl outils-sha1 p7zip jq nano
+RUN apk add --no-cache wine xvfb-run bash which curl outils-sha1 p7zip jq
 
 RUN addgroup -g 1000 -S qaac64 && \
     adduser -u 1000 -S qaac64 -G qaac64
