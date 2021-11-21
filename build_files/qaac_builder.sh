@@ -17,7 +17,7 @@ extract_itunes(){( : ${1:?} ${2:?}
     test -f "${2:?}" && iTunes64Setup_exe_sha1=${2:?}
 
     i=0
-    while ! sha1sum --check "${iTunes64Setup_exe_sha1}"
+    while ! sha1sum -c "${iTunes64Setup_exe_sha1}"
     do
         ((i++ < 3)) || exit 2
         curl -L -o iTunes64Setup.exe "${iTunes64Setup_exe_url}"
@@ -55,3 +55,4 @@ extract_qaac
 extract_itunes iTunes64Setup.exe.url iTunes64Setup.exe.sha1
 
 chmod 0644 qaac/*.*
+mv qaac/*.* /usr/local/bin

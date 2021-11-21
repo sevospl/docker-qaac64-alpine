@@ -1,5 +1,4 @@
 ```
-$ ./qaac_builder.sh
 $ docker build -t qaac64 .
 ```
 
