@@ -6,7 +6,7 @@ RUN apk add --no-cache wine xvfb-run bash which curl outils-sha1 p7zip jq
 RUN addgroup -g 1000 -S qaac64 && \
     adduser -u 1000 -S qaac64 -G qaac64
 
-ADD qaac64/* /tmp/build/
+ADD build_files/* /tmp/build/
 RUN cd /tmp/build && ./qaac_builder.sh && rm -fr /tmp/build/
 
 USER qaac64
